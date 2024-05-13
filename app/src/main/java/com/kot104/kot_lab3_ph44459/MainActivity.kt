@@ -11,8 +11,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +31,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 //            Greeting(name = "Lê Minh Đức - PH44459")
-            GreetingCard(msg = "Lê Minh Đức - PH44459")
+//            GreetingCard(msg = "Lê Minh Đức - PH44459")
+            CounterCard()
         }
     }
 }
@@ -81,4 +84,19 @@ fun MessageCard (msg: String){
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center
    )
+}
+//Bài 3
+@Composable
+fun CounterCard() {
+    var count by rememberSaveable { mutableIntStateOf(0) }
+    Column(
+        modifier = Modifier.fillMaxWidth().padding(24.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        MessageCard("You have clicked the button $count times.")
+        Button(onClick = { count++ }) {
+            Text("Click me")
+        }
+    }
 }
