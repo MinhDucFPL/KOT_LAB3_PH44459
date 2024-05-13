@@ -1,47 +1,46 @@
 package com.kot104.kot_lab3_ph44459
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import com.kot104.kot_lab3_ph44459.ui.theme.KOT_LAB3_PH44459Theme
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            KOT_LAB3_PH44459Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            Greeting(name = "Lê Minh Đức - PH44459")
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String) {
     Text(
         text = "Hello $name!",
-        modifier = modifier
+        modifier = Modifier
+            .padding(0.dp, 16.dp)
+            .fillMaxWidth(),
+        color = Color.Red,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center,
+
     )
 }
-
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    KOT_LAB3_PH44459Theme {
-        Greeting("Android")
-    }
+fun PreviewGreeting(){
+    Greeting(name = "Lê Minh Đức - PH44459")
 }
