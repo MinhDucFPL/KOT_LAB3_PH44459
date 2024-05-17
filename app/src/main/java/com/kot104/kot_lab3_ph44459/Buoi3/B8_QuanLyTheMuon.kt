@@ -77,9 +77,6 @@ fun themTheMuon(danhSachTheMuon: MutableList<B8_Model_TheMuon>, scanner: Scanner
 
     // Print success message
     println("Thêm thẻ mượn thành công!")
-
-    // Consume the remaining newline character
-    scanner.nextLine()
 }
 
 fun xoaTheMuonTheoMaPhieuMuon(danhSachTheMuon: MutableList<B8_Model_TheMuon>, scanner: Scanner) {

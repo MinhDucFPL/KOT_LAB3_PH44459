@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
         setContent {
 //            Greeting(name = "Lê Minh Đức - PH44459")
 //            GreetingCard(msg = "Lê Minh Đức - PH44459")
-            CounterCard()
+          CounterCard()
         }
     }
 }
@@ -54,7 +54,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewGreeting(){
-    Greeting(name = "Lê Minh Đức - PH44459")
+    CounterCard()
 }
 //Bài 2:
 @Composable
@@ -90,7 +90,9 @@ fun MessageCard (msg: String){
 fun CounterCard() {
     var count by rememberSaveable { mutableIntStateOf(0) }
     Column(
-        modifier = Modifier.fillMaxWidth().padding(24.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(24.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -99,4 +101,12 @@ fun CounterCard() {
             Text("Click me")
         }
     }
+}
+//Làm thêm Buổi 4
+@Composable
+fun GetLayout (title: String){
+    Text(
+        text = title,
+        modifier = Modifier.fillMaxWidth()
+    )
 }
